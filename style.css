@@ -13,3 +13,47 @@
 @media(max-width:850px){.nav-links{display:none;position:absolute;left:20px;right:20px;top:76px;background:#0c0e11;border:1px solid var(--line);padding:18px;border-radius:12px;flex-direction:column;gap:15px}.nav-links.open{display:flex}.menu-toggle{display:block}.hero,.about-grid,.project-grid,.edu-grid{grid-template-columns:1fr}.hero{gap:35px;min-height:auto;padding-top:80px}.project-list,.skills-grid{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(3,1fr)}.experience-head{flex-direction:column;gap:8px}.section{padding:85px 0}}
 @media(max-width:520px){.container{width:min(calc(100% - 28px),var(--max))}.brand{font-size:1rem}.hero-card{min-height:330px}.kpi-row{grid-template-columns:repeat(2,1fr)}.footer{flex-direction:column;gap:8px}.project-card{grid-template-columns:45px 1fr}.project-number{padding:20px 10px}.project-card-body{padding:20px}.pipeline{gap:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* ================================
+   PROJECT GALLERY
+   ================================ */
+
+.visual-slot img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+.bun-gallery {
+  width: 100%;
+}
+
+.gallery-grid {
+  display: block;
+}
+
+.gallery-grid img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  display: none;
+  border-radius: 12px;
+}
+
+.gallery-grid img:first-child {
+  display: block;
+}
+
+.bun-gallery::after {
+  content: "More project screenshots available";
+  display: block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: .7;
+}
