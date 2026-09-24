@@ -19,9 +19,10 @@
 
 .visual-slot img {
   width: 100%;
-  max-height: 360px;
+  max-height: 320px;
   object-fit: contain;
   display: block;
+  margin: 0 auto;
   border-radius: 12px;
 }
 
@@ -29,31 +30,47 @@
   width: 100%;
 }
 
-.gallery-grid {
-  display: block;
-}
-
-.gallery-grid img {
+.gallery-grid > img:first-child {
   width: 100%;
-  max-height: 300px;
+  max-height: 280px;
   object-fit: contain;
-  display: none;
+  display: block;
+  margin: 0 auto;
   border-radius: 12px;
 }
 
-.gallery-grid img:first-child {
-  display: block;
+.hidden-gallery {
+  display: none;
+  margin-top: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 
-.bun-gallery::after {
-  content: "More project screenshots available";
+.hidden-gallery.open {
+  display: grid;
+}
+
+.hidden-gallery img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.gallery-toggle {
   display: block;
-  margin-top: 12px;
-  padding: 10px 14px;
-  border: 1px solid rgba(255,255,255,.15);
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 8px;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 1px;
-  opacity: .7;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.gallery-toggle:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
 }
